@@ -218,12 +218,12 @@ class Ball {
     increaseSpeed() {
         if (bounce == 4) {
             //if ((this.velY != 7) || (this.velY != -7)) {
-                this.velY > 0 ? this.velY += 2 : this.velY -- 2;
+            this.velY > 0 ? this.velY += 2 : this.velY -= 2;
             //}
         }
         //if ((this.velY != 7) || (this.velY != -7)) {
-            if (bounce == 12) {
-                this.velY > 0 ? this.velY += 2 : this.velY = -= 2;
+        if (bounce == 12) {
+            this.velY > 0 ? this.velY += 2 : this.velY -= 2;
             //}
         }
     }  

@@ -1,0 +1,175 @@
+/**************  BODY AND TITLE  **************/
+
+body {
+    display: grid;
+    background-color: rgb(0, 0, 35);
+    justify-content: center;
+    justify-items: center;
+    margin: 0 auto;  
+    /** 
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    */
+  }
+
+.titleDiv {
+  display: grid;
+  width: fit-content;
+  height: fit-content;
+  min-height: 60px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 0px;
+  color: white;
+  text-align: center;
+  z-index: 1000;
+}
+
+.titleDiv a {
+  height: fit-content;
+  margin: auto;
+}
+
+.titleDiv span {
+  margin: 0 auto;
+  font-family: 'Bungee Spice', cursive;
+  font-size: 32px;
+  height: 2ch;
+  display: inline-block;
+  transition: transform .5s;
+  /**transform-style: preserve-3d;*/
+} 
+
+* {
+  font-family: 'Tektur', cursive;
+}
+
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+  width: 7ch;
+  margin: 0 auto;
+  font-size: 25px;
+  background-color: #f0f0f0;
+}
+
+
+/**************  GAME ELEMENTS  **************/
+
+
+.gamePos {
+    display: grid;
+}
+
+.score { 
+    text-align: center;
+    justify-content: center;
+    background-color: transparent;
+    color: white;
+    font-size: 10px;
+}
+
+canvas {
+    background-color: black;
+    box-sizing: border-box;
+    border: 1px solid white;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+}
+
+
+/**************  MEDIA QUERY  **************/
+
+
+@media (min-width: 700px) {
+    .titleDiv span {
+        font-size: 4em;
+        height: fit-content;
+      }
+    .titleDiv:hover span:nth-of-type(odd){
+        text-shadow: 0px 0px 10px rgba(225, 9, 9, 1);
+        transform: rotate(9deg) rotateY(360deg);
+    }
+  
+    .titleDiv:hover span:nth-of-type(even){
+        text-shadow: 0px 0px 10px rgba(103, 7, 199, 0.75);
+        transform: rotate(-9deg) rotateY(-360deg);
+    }
+
+    .score { 
+        font-size: 20px;
+    }
+}
+
+/**************  MESSAGES AND NOTIFICATIONS  **************/
+
+
+.message, .turnMessage {
+  position: absolute;
+  display: block;
+  text-align: center;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  align-self: center;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  width: max-content;
+  height: fit-content;
+  font-size: 20px;
+  z-index: 9999;
+
+}
+
+.message {
+  border: 10px ridge #F55C47;
+  padding-bottom: none;
+}
+
+.messageText {
+  padding: 0px 10px;
+}
+
+.message button {
+  border-radius: 0px 0px 10px 10px;
+  background-color: #F55C47;
+}
+
+.turnMessage {
+  border: 10px ridge #47F5A1;
+}
+
+.turnMessageText {
+  padding: 0px 10px;
+}
+
+.matchButton {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: none;
+  margin: 0px;
+  padding: 15px 0px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.matchButton:hover {
+  opacity: 0.5;
+}
+
+.btnDiv button:first-of-type {
+  background-color: #47F5A1;
+  font-size: 30px;
+}
+
+.btnDiv button:last-of-type {
+  background-color: #F55C47;
+  border-radius: 0px 0px 8px 8px;
+  font-size: 30px;
+}

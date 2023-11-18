@@ -223,7 +223,6 @@ class Ball {
     }  
 }
 
-
 class Brick {
     x;
     y;
@@ -466,6 +465,7 @@ function turnNotification(msgText, parent, acceptText, rejectText, colorData) {
 function changeToScreenSize() {
     bWidth = board.width = 99 * window.innerWidth / 100;
     bHeight = board.height = 67 * window.innerHeight / 100;
+    
 
     if (bWidth > 700) {
         bWidth = board.width =  700
@@ -474,17 +474,31 @@ function changeToScreenSize() {
     if (bHeight > 700) {
         bHeight = board.height = 700;
     }
-    
-    brickStartY =  10 * window.innerHeight / 100 || 100;
-    pWidth = bWidth / 5;
-    pHeight = bHeight / 35;
-    pVelocity = bWidth / 10;
-    paddleStartX = bWidth/2 - pWidth / 2;
-    paddleStartY = bHeight - pHeight;
+    gameBoard.width = bWidth
+    gameBoard.height = bHeight
 
+    pWidth = paddle1.width = bWidth / 5;
+    pHeight = paddle1.height =  bHeight / 35;
+    pVelocity = paddle1.velX = bWidth / 10;
+    paddle1.y = paddleStartY = bHeight - pHeight;
+    paddle1.X = paddleStartX = bWidth/2 - pWidth / 2;
+    
 
     bRadius = bWidth / 60;
-    brickW = (bWidth  / 16) - 2
+
+    brickW = (bWidth  / 15) - 2
+    for (const brick of bricks) {
+        brick.width = brickW;
+        if (brick.column != 0) {
+            brick.x = (brickW * brick.column) + 2
+        }
+        brick.draw();
+        console.log(brick)
+    }
+    paddle1.draw();
+    for (const ball of balls) {
+        ball.draw()
+    }
 }
 
 
@@ -557,11 +571,10 @@ function gameLoop() {
     }
 }
 
-/**
 window.addEventListener('resize', (e) => {
-    resetBoard()
+    //resetBoard()
+    changeToScreenSize()
 })
-*/
 
 let gameBoard = new Board();
 let paddle1 = new Paddle1(paddleStartX, paddleStartY)

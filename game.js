@@ -30,7 +30,7 @@ let paddleStartX = bWidth/2 - pWidth / 2;
 let paddleStartY = bHeight - pHeight;
 
 let bVelocityX = randomNeg(1);
-let bVelocityY = 2;
+let bVelocityY = 4;
 let bRadius = bWidth / 60;
 
 let brickW = (bWidth  / 16) - 2

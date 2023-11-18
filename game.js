@@ -15,6 +15,7 @@ const score1 = document.querySelector('#player1');
 let bWidth = board.width = 99 * window.innerWidth / 100 || 700
 let bHeight = board.height = 67 * window.innerHeight / 100 || 800;
 
+    
 if (bWidth > 700) {
     bWidth = board.width =  700
 }
@@ -31,6 +32,11 @@ let paddleStartY = bHeight - pHeight;
 
 let bVelocityX = randomNeg(1);
 let bVelocityY = 4;
+if (bWidth > 550) {
+    bVelocityY = 2;
+}
+let redHit = false
+
 let bRadius = bWidth / 60;
 
 let brickW = (bWidth  / 16) - 2
@@ -210,15 +216,15 @@ class Ball {
     }
 
     increaseSpeed() {
-        if (bounce >= 4) {
-            if ((this.velY != 7) && (this.velY != -7)) {
-                this.velY > 0 ? this.velY = 5 : this.velY = -5;
-            }
+        if (bounce == 4) {
+            //if ((this.velY != 7) || (this.velY != -7)) {
+                this.velY > 0 ? this.velY += 2 : this.velY -- 2;
+            //}
         }
-        if ((this.velY != 7) && (this.velY != -7)) {
-            if (bounce >= 12) {
-                this.velY > 0 ? this.velY = 7 : this.velY = -7;
-            }
+        //if ((this.velY != 7) || (this.velY != -7)) {
+            if (bounce == 12) {
+                this.velY > 0 ? this.velY += 2 : this.velY = -= 2;
+            //}
         }
     }  
 }
@@ -331,7 +337,9 @@ class Brick {
                 if (brick.exists == false) {
                     if (brick.color == "red") {
                         scoreP1 += 7; 
-                        ball.velY > 0 ? ball.velY = 5 : ball.velY = -5; 
+                        if (redHit == false) {
+                            ball.velY > 0 ? ball.velY += 2 : ball.velY -= 2; 
+                        }
                         score1.textContent = ` ${scoreP1}`;
                     }
                     if (brick.color == "orange") {

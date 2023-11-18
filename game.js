@@ -485,8 +485,9 @@ function changeToScreenSize() {
     
 
     bRadius = bWidth / 60;
-
+    brickStartY =  10 * window.innerHeight / 100 || 100;
     brickW = (bWidth  / 15) - 2
+    
     for (const brick of bricks) {
         brick.width = brickW;
         if (brick.column != 0) {

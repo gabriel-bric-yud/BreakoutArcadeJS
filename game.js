@@ -483,7 +483,6 @@ function changeToScreenSize() {
     paddle1.y = paddleStartY = bHeight - pHeight;
     paddle1.X = paddleStartX = bWidth/2 - pWidth / 2;
     
-
     bRadius = bWidth / 60;
     brickStartY =  10 * window.innerHeight / 100 || 100;
     brickW = (bWidth  / 15) - 2
@@ -499,6 +498,7 @@ function changeToScreenSize() {
     paddle1.draw();
     for (const ball of balls) {
         ball.draw()
+        ball.x = bWidth / 2
     }
 }
 

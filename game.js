@@ -557,11 +557,11 @@ function gameLoop() {
     }
 }
 
-
+/**
 window.addEventListener('resize', (e) => {
     resetBoard()
 })
-
+*/
 
 let gameBoard = new Board();
 let paddle1 = new Paddle1(paddleStartX, paddleStartY)

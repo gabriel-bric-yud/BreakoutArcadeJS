@@ -35,7 +35,7 @@ let bVelocityY = 4;
 if (bWidth > 550) {
     bVelocityY = 2;
 }
-let redHit = false
+let redHit = true
 
 let bRadius = bWidth / 60;
 
@@ -218,12 +218,12 @@ class Ball {
     increaseSpeed() {
         if (bounce == 4) {
             //if ((this.velY != 7) || (this.velY != -7)) {
-            this.velY > 0 ? this.velY += 2 : this.velY -= 2;
+            this.velY > 0 ? this.velY = bVelocityY + 2 : this.velY = (bVelocityY + 2) * -1;
             //}
         }
         //if ((this.velY != 7) || (this.velY != -7)) {
         if (bounce == 12) {
-            this.velY > 0 ? this.velY += 2 : this.velY -= 2;
+            this.velY > 0 ? this.velY = bVelocityY + 4 : this.velY = (bVelocityY + 4) * -1;
             //}
         }
     }  
@@ -336,10 +336,8 @@ class Brick {
             for (const brick of bricks) {
                 if (brick.exists == false) {
                     if (brick.color == "red") {
-                        scoreP1 += 7; 
-                        if (redHit == false) {
-                            ball.velY > 0 ? ball.velY += 2 : ball.velY -= 2; 
-                        }
+                        scoreP1 += 7;
+                        ball.velY > 0 ? ball.velY = bVelocityY + 6 : ball.velY = (bVelocityY + 6) * -1; 
                         score1.textContent = ` ${scoreP1}`;
                     }
                     if (brick.color == "orange") {
@@ -518,6 +516,7 @@ function resetBoard() {
 
     bricks = [];
     brick1.makeRow(8);
+    redHit = true
 
     for (const brick of bricks) {
         brick.draw();

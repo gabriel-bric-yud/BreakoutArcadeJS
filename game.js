@@ -35,7 +35,7 @@ let bRadius = bWidth / 60;
 
 let brickW = (bWidth  / 16) - 2
 let brickH = 15
-let brickStartY =  20 * window.innerHeight / 100 || 100;
+let brickStartY =  10 * window.innerHeight / 100 || 100;
 
 let balls = []
 let bricks = []
@@ -475,7 +475,7 @@ function changeToScreenSize() {
         bHeight = board.height = 700;
     }
     
-    brickStartY =  20 * window.innerHeight / 100 || 100;
+    brickStartY =  10 * window.innerHeight / 100 || 100;
     pWidth = bWidth / 5;
     pHeight = bHeight / 35;
     pVelocity = bWidth / 10;

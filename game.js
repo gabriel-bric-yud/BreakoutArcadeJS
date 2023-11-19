@@ -196,9 +196,20 @@ class Ball {
     }
 
     update() {
-        if (this.x + this.r >= bWidth) { this.velX = -(this.velX); playSound(); reflect = true}
-        else if (this.x - this.r <= 0) { this.velX = -(this.velX); playSound(); reflect = true}
-        else if (this.y - this.r <= 0) { this.velY = -(this.velY); playSound(); reflect = true; paddle1.width = pWidth / 2}
+        if (this.x + this.r >= bWidth) { 
+            this.velX = -(this.velX); 
+            //playSound(); 
+            reflect = true}
+        else if (this.x - this.r <= 0) { 
+            this.velX = -(this.velX); 
+            //playSound(); 
+            reflect = true}
+        else if (this.y - this.r <= 0) {
+            this.velY = -(this.velY); 
+            //playSound(); 
+            reflect = true; 
+            paddle1.width = pWidth / 2
+        }
     }
 
     reset() {

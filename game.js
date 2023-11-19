@@ -499,7 +499,6 @@ function changeToScreenSize() {
             brick.x = (brickW * brick.column) + 2
         }
         brick.draw();
-        console.log(brick)
     }
     paddle1.draw();
     for (const ball of balls) {

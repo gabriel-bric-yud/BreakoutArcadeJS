@@ -434,6 +434,9 @@ function fadeOut(elem, speed, startPosition, endPosition, bool) {
 }
 
 function turnNotification(msgText, parent, acceptText, rejectText, colorData) {
+    document.querySelectorAll('.turnMessage').forEach(elem => {
+        elem.remove()
+    })
     const messageDiv = document.createElement('div')
     messageDiv.classList.add('turnMessage')
     messageDiv.style.borderColor = colorData;
@@ -450,7 +453,8 @@ function turnNotification(msgText, parent, acceptText, rejectText, colorData) {
     acceptBtn.innerHTML = `${acceptText} &#10004;`
     acceptBtn.addEventListener('click', (e) => {
         fadeOut(messageDiv, 200, position, position - 20, true)
-        startCode = 0;  
+        startCode = 0; 
+        resetBoard()
     })
 
     btnDiv.appendChild(acceptBtn)  
@@ -509,6 +513,10 @@ function changeToScreenSize() {
 
 
 function resetBoard() {
+    document.querySelectorAll('.turnMessage').forEach(elem => {
+        elem.remove()
+    })
+    
     changeToScreenSize()
     gameBoard.draw();
     playerLife = 3;

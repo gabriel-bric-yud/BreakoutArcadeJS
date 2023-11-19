@@ -10,7 +10,7 @@ body {
     width: 100%;
     overflow: hidden;
     position: relative;
-  }
+}
 
 .titleDiv {
   display: grid;
@@ -109,7 +109,7 @@ canvas {
 
 .message, .turnMessage {
   position: absolute;
-  display: grid;
+  display: block;
   text-align: center;
   justify-content: center;
   justify-self: center;
@@ -118,7 +118,7 @@ canvas {
   background-color: whitesmoke;
   border-radius: 20px;
   width: max-content;
-  height: fit-content;
+  height: 10ch;
   font-size: 20px;
   z-index: 9999;
 

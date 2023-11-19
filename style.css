@@ -109,7 +109,7 @@ canvas {
 
 .message, .turnMessage {
   position: absolute;
-  display: block;
+  display: grid;
   text-align: center;
   justify-content: center;
   justify-self: center;
